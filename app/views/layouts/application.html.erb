@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WorkDay13</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div>
+      <%=link_to "SignUp", new_user_path %>
+    </div>
+    <div>
+      <%=link_to "to_Blog_Index", blogs_path %>
+    </div>
+    <div>
+      <%=link_to "to_Login", new_session_path %>      
+    </div>
+    <%= yield %>
+  </body>
+</html>
