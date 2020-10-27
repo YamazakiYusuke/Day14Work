@@ -10,15 +10,15 @@
   </head>
 
   <body>
-    <div>
-      <%=link_to "SignUp", new_user_path %>
-    </div>
-    <div>
-      <%=link_to "to_Blog_Index", blogs_path %>
-    </div>
-    <div>
-      <%=link_to "to_Login", new_session_path %>      
-    </div>
     <%= yield %>
+    <div>
+      <%=link_to "SignUp", new_user_path, class:"btn-danger badge" %>
+    </div>
+    <div>
+      <%=link_to "to_Blog_Index", blogs_path, class:"btn-danger badge" %>
+    </div>
+    <div>
+      <%=link_to "to_Login", new_session_path, class:"btn-danger badge" %>
+    </div>
   </body>
 </html>
