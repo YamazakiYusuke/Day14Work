@@ -10,5 +10,16 @@
   <%= @blog.content %>
 </p>
 
+<p>
+  <% unless current_user.id == @blog.user_id  %>
+    <% if @blog.favorites.find_by(user_id:current_user.id) %>
+      <%= link_to 'お気に入り解除する', favorite_path(id: @blog.favorites.ids), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to 'お気に入りする', favorites_path(blog_id: @blog.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
+
